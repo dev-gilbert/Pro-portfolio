@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 import {
-  ArrowDown, ArrowUpRight, Code2, Linkedin, Mail, Menu, X,
+  ArrowDown, ArrowUpRight, Code2, Mail, Menu, X,
 } from "lucide-react";
 
 const projects = [
@@ -220,7 +220,7 @@ export default function App() {
             <a className="contact-email" href="mailto:muhiregilbert27@gmail.com">muhiregilbert27@gmail.com <ArrowUpRight size={22}/></a>
             <div className="contact-bottom">
               <p>Interested in engineering, infrastructure, or products that solve real problems? I’d like to hear about it.</p>
-              <div className="social-links"><a href="https://github.com/dev-gilbert" target="_blank" rel="noreferrer"><Code2 size={16}/> GitHub <ArrowUpRight size={14}/></a><a href="https://linkedin.com/in/gilbert-muhire" target="_blank" rel="noreferrer"><Linkedin size={16}/> LinkedIn <ArrowUpRight size={14}/></a><a href="mailto:muhiregilbert27@gmail.com"><Mail size={16}/> Email <ArrowUpRight size={14}/></a></div>
+              <div className="social-links"><a href="https://github.com/dev-gilbert" target="_blank" rel="noreferrer"><Code2 size={16}/> GitHub <ArrowUpRight size={14}/></a><a href="https://linkedin.com/in/gilbert-muhire" target="_blank" rel="noreferrer"><span className="linkedin-mark">in</span> LinkedIn <ArrowUpRight size={14}/></a><a href="mailto:muhiregilbert27@gmail.com"><Mail size={16}/> Email <ArrowUpRight size={14}/></a></div>
             </div>
           </Reveal>
         </section>
