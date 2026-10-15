@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 import {
-  ArrowDown, ArrowDownRight, ArrowRight, ArrowUpRight, Code2,
-  Globe2, Layers3, Linkedin, Mail, Menu, Terminal, X,
+  ArrowDown, ArrowUpRight, Code2, Linkedin, Mail, Menu, X,
 } from "lucide-react";
 
 const projects = [
@@ -58,7 +57,7 @@ const skills = [
   "API integrations", "Observability", "Infrastructure",
 ];
 
-function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   const reduced = useReducedMotion();
   return (
     <motion.div
