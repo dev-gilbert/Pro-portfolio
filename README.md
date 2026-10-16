@@ -23,4 +23,11 @@ npm run preview
 - Edit visual styles and responsive breakpoints in `src/index.css`.
 - Update metadata and fonts in `index.html`.
 
-The interface includes scroll-triggered reveals, a spring-based reading progress bar, hover interactions, responsive navigation, and reduced-motion support. Project artwork is created with CSS and HTML rather than external image dependencies.
+## Features
+- **Motion animations** (`motion/react`): staggered hero entrance, scroll-triggered reveals, hero parallax, spring-based reading progress bar, magnetic scroll button, 3D tilt on project cards, staggered skill chips.
+- **Interactive particles**: a full-page canvas particle network (`src/components/ParticleCanvas.tsx`) that links nearby particles, reacts to the cursor, pauses when the tab is hidden, and recolours with the theme.
+- **Dark / light mode**: animated sun/moon toggle (`src/components/ThemeToggle.tsx`). Follows the system setting until you choose, remembers your choice in `localStorage`, and applies before first paint (no flash).
+- **Smooth scrolling**: inertia scrolling and eased anchor navigation via [Lenis](https://github.com/darkroomengineering/lenis) (`src/hooks/useSmoothScroll.ts`).
+- **Accessibility**: all motion, particles and smooth scrolling respect `prefers-reduced-motion`.
+
+Project artwork is created with CSS and HTML rather than external image dependencies.
