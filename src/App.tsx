@@ -142,9 +142,9 @@ export default function App() {
           </div>
           <div className="hero-title-wrap">
             <motion.p className="eyebrow hero-eyebrow" initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.65 }}>SOFTWARE ENGINEER · BUILDER · SYSTEMS THINKER</motion.p>
-            <h1 aria-label="Building useful things for the real world">
-              <span className="hero-line"><motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}>BUILDING</motion.span></span>
-              <span className="hero-line hero-line-two"><motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}>WHAT’S <i>USEFUL.</i></motion.span></span>
+            <h1 aria-label="Hello world. I’m Gilbert Muhire, software engineer.">
+              <span className="hero-line"><motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.85, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}>HELLO,</motion.span></span>
+              <span className="hero-line hero-line-two"><motion.span initial={{ y: "110%" }} animate={{ y: 0 }} transition={{ duration: 0.9, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}>WORLD<i>.</i></motion.span></span>
             </h1>
           </div>
           <div className="hero-bottom">
