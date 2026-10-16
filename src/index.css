@@ -5,3 +5,89 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
 .linkedin-mark{font-family:Arial,sans-serif;font-weight:800;font-size:13px;letter-spacing:-.06em;display:inline-grid;place-items:center;width:16px;height:16px;border:1px solid currentColor;border-radius:2px;line-height:1}
+
+
+/* Dark cinematic redesign: pixel-noise, editorial type, and luminous project panels */
+:root{color-scheme:dark;font-family:"Manrope",sans-serif;color:#f2f1eb;background:#080909;--paper:#080909;--ink:#f2f1eb;--muted:#898b87;--line:#282a28;--acid:#d7f36a;--mono:"DM Mono",monospace}
+html,body{background:#080909;color:#f2f1eb}
+body{background-image:radial-gradient(ellipse at 78% 12%,rgba(68,82,63,.14),transparent 38%),radial-gradient(ellipse at 14% 48%,rgba(61,72,65,.08),transparent 32%)}
+.site-shell{background:#080909}
+.site-header{border-color:#292b28}
+.wordmark{color:#f4f3ec}
+.nav-links>a:not(.nav-contact){color:#a5a69d}
+.nav-links>a:hover{color:#d7f36a}
+.nav-links a span{color:#70736c}
+.nav-contact{border-color:#4a4d45;color:#f2f1eb}
+.nav-contact:hover{color:#10110e;background:#d7f36a;border-color:#d7f36a}
+.scroll-progress{background:#d7f36a}
+.hero{min-height:calc(100svh - 82px);isolation:isolate}
+.hero:before{content:"";position:absolute;z-index:-1;right:2%;top:17%;width:min(48vw,580px);height:min(64vw,570px);opacity:.58;background-image:radial-gradient(circle,rgba(217,239,184,.88) 1px,transparent 1.7px),radial-gradient(circle,rgba(133,165,112,.62) 1px,transparent 1.8px);background-size:9px 9px,13px 13px;background-position:0 0,4px 6px;mask-image:radial-gradient(ellipse at 53% 43%,#000 0%,rgba(0,0,0,.92) 18%,rgba(0,0,0,.38) 48%,transparent 72%);animation:particle-breathe 8s ease-in-out infinite alternate;pointer-events:none}
+.hero:after{content:"";position:absolute;z-index:-1;right:13%;top:20%;width:min(28vw,300px);height:min(45vw,430px);border-radius:48% 48% 42% 42%;background:radial-gradient(ellipse at 50% 23%,rgba(226,239,204,.16),transparent 22%),radial-gradient(ellipse at 50% 48%,rgba(184,207,164,.1),transparent 48%);filter:blur(22px);pointer-events:none}
+@keyframes particle-breathe{0%{transform:translate3d(0,0,0) scale(.97);opacity:.35}100%{transform:translate3d(-10px,-8px,0) scale(1.04);opacity:.68}}
+.hero-meta{color:#969990}
+.status-dot{background:#d7f36a;box-shadow:0 0 0 4px #d7f36a1a}
+.meta-cross{color:#d7f36a}
+.hero-title-wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(65px,11.6vw,160px);text-shadow:0 5px 50px #000}
+.hero h1 i{color:#d7f36a}
+.hero-intro{color:#b1b2a9}
+.round-link{border-color:#53564c;color:#f2f1eb}
+.round-link:hover{color:#111;background:#d7f36a;border-color:#d7f36a}
+.hero-index{color:#888b82}
+.hero-stamp{border-color:#484d3d;color:#a6b28a;background:#08090970;backdrop-filter:blur(5px)}
+.hero-stamp strong{color:#d7f36a}
+.work-section,.about-section,.experience-section,.stack-section{border-color:#292b28}
+.eyebrow{color:#9b9e92}
+.section-heading h2 i,.stack-top h2 i,.experience-grid h2 i,.about-content h2 i{color:#d7f36a}
+.section-aside{color:#a0a197}
+.project-card{background:#111311;border-color:#292d29}
+.project-card:hover{border-color:#69745c}
+.project-info{background:#101210}
+.project-kicker{color:#96998e}
+.project-title-row h3{color:#f2f1eb}
+.project-arrow{border-color:#42463e;color:#f2f1eb}
+.project-card:hover .project-arrow{color:#111;background:#d7f36a;border-color:#d7f36a}
+.project-type{color:#a9b39a}
+.project-description{color:#b1b2a9}
+.project-tags span,.experience-tags span{border-color:#383c35;color:#b2b5a8}
+.ihute .project-art{background:#1d2818}
+.compliance .project-art{background:#182320}
+.cloudguard .project-art{background:#1b2027}
+.digfootprint .project-art{background:#22271d}
+.visual-search{box-shadow:0 20px 55px #0009}
+.visual-compliance{box-shadow:0 20px 55px #0009}
+.visual-cloud{box-shadow:0 20px 55px #0009}
+.visual-footprint{box-shadow:0 20px 55px #0009}
+.work-footer{color:#85887d}
+.work-footer a{color:#e1e3d8}
+.about-number{color:#777a71}
+.about-lead{color:#f0f0e8}
+.about-copy,.about-facts p{color:#a4a69b}
+.about-facts{border-color:#292b28}
+.about-facts span{color:#d7f36a}
+.about-facts strong{color:#eceee5}
+.experience-date{color:#a6a89d;border-color:#292b28}
+.experience-date span{color:#777a71}
+.experience-entry h3{color:#f2f1eb}
+.experience-entry h3 span{color:#d7f36a}
+.experience-company{color:#b4b6aa}
+.experience-entry>p:last-of-type{color:#a7a99e}
+.stack-top>p{color:#a6a89d}
+.skill-cloud span{background:#111311;border-color:#343830;color:#e5e7dc}
+.skill-cloud span:hover{background:#d7f36a;border-color:#d7f36a;color:#111}
+.contact-section{background:#d7f36a;color:#10120d}
+.contact-top .eyebrow{color:#414b30}
+.contact-top>span{color:#384329}
+.contact-inner h2 i{color:#313b22}
+.contact-email{border-color:#7f914f;color:#15180f}
+.contact-email:hover{color:#414e2a}
+.contact-bottom>p{color:#3c4431}
+.social-links a{border-color:#91a45c;color:#171a12}
+.social-links a:hover{background:#10120d;color:#d7f36a;border-color:#10120d}
+.site-footer{color:#a6a89d}
+.site-footer>span,.site-footer>a:last-of-type{color:#888b81}
+.site-footer>a:last-of-type:hover{color:#d7f36a}
+.linkedin-mark{color:inherit}
+@media(max-width:900px){.hero:before{right:-7%;top:20%;width:60vw;height:65vw;opacity:.4}.hero:after{right:6%}}
+@media(max-width:640px){.nav-links{background:#0c0e0c;border-color:#292b28}.nav-links>a{border-color:#292b28}.nav-links .nav-contact{border-color:#41453b}.hero{min-height:calc(91svh - 70px)}.hero:before{right:-20%;top:21%;width:100vw;height:112vw;opacity:.32;background-size:8px 8px,12px 12px}.hero:after{right:2%;top:24%;width:62vw;height:85vw;opacity:.5}.hero-title-wrap{padding-top:85px}.hero h1{font-size:clamp(53px,13.4vw,84px);position:relative;z-index:2}.hero-line-two{padding-left:0}.hero-intro{max-width:260px}.hero-stamp{display:none}.project-card{background:#101210}.project-info{background:#101210}.contact-section{padding-inline:18px}}
+@media(prefers-reduced-motion:reduce){.hero:before{animation:none}}
