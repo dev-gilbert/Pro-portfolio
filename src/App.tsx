@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
 import {
-  ArrowDown, ArrowUpRight, Code2, Mail, Menu, X,
+  ArrowDown, ArrowUpRight, Code2, Mail, Menu, X, Sun, Moon,
 } from "lucide-react";
 
 const projects = [
@@ -72,6 +72,36 @@ function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; 
   );
 }
 
+const particleSpecs = Array.from({ length: 42 }, (_, i) => ({
+  left: (i * 37 + (i % 5) * 13) % 100,
+  top: (i * 61 + (i % 7) * 9) % 100,
+  size: i % 9 === 0 ? 4 : i % 4 === 0 ? 3 : 2,
+  duration: 5 + (i % 7) * 1.25,
+  delay: (i % 11) * -0.7,
+}));
+
+function ParticleField() {
+  const reduced = useReducedMotion();
+  return (
+    <div className="particle-field" aria-hidden="true">
+      {particleSpecs.map((p, i) => (
+        <motion.span
+          key={i}
+          className="particle"
+          style={{ left: `${p.left}%`, top: `${p.top}%`, width: p.size, height: p.size }}
+          animate={reduced ? { opacity: 0.45 } : {
+            x: [0, (i % 2 ? 1 : -1) * (12 + i % 23), 0],
+            y: [0, -18 - (i % 31), 0],
+            opacity: [0.18, i % 3 === 0 ? 0.9 : 0.55, 0.18],
+            scale: [0.8, i % 4 === 0 ? 1.5 : 1, 0.8],
+          }}
+          transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "easeInOut" }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function ProjectVisual({ kind }: { kind: string }) {
   if (kind === "search") {
     return <div className="visual-search">
@@ -112,17 +142,17 @@ function ProjectVisual({ kind }: { kind: string }) {
 }
 
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);\n  const [lightMode, setLightMode] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 24, restDelta: 0.001 });
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="site-shell">
+    <motion.div className={lightMode ? "site-shell theme-light" : "site-shell"} animate={{ backgroundColor: lightMode ? "#e9e8e1" : "#080909", color: lightMode ? "#171914" : "#f2f1eb" }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}>
       <motion.div className="scroll-progress" style={{ scaleX }} />
       <header className="site-header">
-        <a href="#home" className="wordmark" onClick={closeMenu}>GM<span>®</span></a>
+        <a href="#home" className="wordmark" onClick={closeMenu}>GM<span>®</span></a>\n        <motion.button className="theme-toggle" onClick={() => setLightMode(!lightMode)} whileTap={{ scale: 0.9 }} aria-label={lightMode ? "Switch to dark mode" : "Switch to light mode"} title={lightMode ? "Switch to dark mode" : "Switch to light mode"}><motion.span key={lightMode ? "sun" : "moon"} initial={{ rotate: -70, opacity: 0, scale: 0.6 }} animate={{ rotate: 0, opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 240, damping: 16 }}>{lightMode ? <Moon size={16}/> : <Sun size={16}/>}</motion.span><span className="theme-toggle-label">{lightMode ? "LIGHT" : "DARK"}</span></motion.button>
         <nav className={menuOpen ? "nav-links nav-open" : "nav-links"}>
           <a href="#work" onClick={closeMenu}>Work <span>04</span></a>
           <a href="#about" onClick={closeMenu}>About</a>
@@ -136,7 +166,7 @@ export default function App() {
 
       <main>
         <section className="hero section-wrap" id="home">
-          <div className="hero-meta">
+          <ParticleField />\n          <div className="hero-meta">
             <span><i className="status-dot"/> AVAILABLE FOR SELECT OPPORTUNITIES</span>
             <span>KIGALI, RWANDA <span className="meta-cross">✳</span> WORKING EVERYWHERE</span>
           </div>
